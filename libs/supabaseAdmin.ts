@@ -42,8 +42,12 @@ const upsertPriceRecord = async (price: Stripe.Price) => {
     metadata: price.metadata
   };
 
-  const { error } = await supabaseAdmin.from('prices').upsert([priceData]);
-  if (error) throw error;
+  const { error } = await supabaseAdmin
+  .from('prices')
+  .upsert([priceData]);
+  if (error) {
+    throw error;
+  }
   console.log(`Price inserted/updated: ${price.id}`);
 };
 
@@ -71,7 +75,10 @@ const createOrRetrieveCustomer = async ({
     const { error: supabaseError } = await supabaseAdmin
       .from('customers')
       .insert([{ id: uuid, stripe_customer_id: customer.id }]);
-    if (supabaseError) throw supabaseError;
+      
+    if (supabaseError) {
+      throw supabaseError;
+    }
     console.log(`New customer created and inserted for ${uuid}.`);
     return customer.id;
   }

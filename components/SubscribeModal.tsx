@@ -81,7 +81,7 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
           if (!product.prices?.length) {
             return (
               <div key={product.id}>
-                No prices available
+                
               </div>
             );
           }
