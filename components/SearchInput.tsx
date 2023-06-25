@@ -28,7 +28,7 @@ const SearchInput = () => {
 
   return ( 
     <Input 
-      placeholder="Search your symphony"
+      placeholder="seach your symphony"
       value={value}
       onChange={(e) => setValue(e.target.value)}
     />
