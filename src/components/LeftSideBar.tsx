@@ -5,6 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { GoClock } from "react-icons/go";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaPodcast } from "react-icons/fa";
+import { Dot } from "./Dot";
 
 export function LeftSideBar() {
   return (
@@ -43,6 +44,25 @@ export function LeftSideBar() {
         <button className="flex items-center">
           <FaPodcast className="mr-2" />
           <span>Podcasts</span>
+        </button>
+      </div>
+      <div className="flex flex-col gap-y-5">
+        <span className="text-xs uppercase">Your Playlists</span>
+        <button className="flex items-center">
+          <Dot color="red" />
+          <span>Metacore</span>
+        </button>
+        <button className="flex items-center">
+          <Dot color="green" />
+          <span>Electro</span>
+        </button>
+        <button className="flex items-center">
+          <Dot color="blue" />
+          <span>Funk</span>
+        </button>
+        <button className="flex items-center">
+          <Dot color="yellow" />
+          <span>Disco</span>
         </button>
       </div>
     </div>
